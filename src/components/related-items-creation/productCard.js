@@ -2,10 +2,10 @@ import React from 'react';
 import apiMaster from '../../apiMaster';
 import CardStars from './cardStars';
 import ItemsCarousel from 'react-items-carousel';
-import {
-  FaRegArrowAltCircleLeft,
-  FaRegArrowAltCircleRight,
-} from 'react-icons/fa';
+// import {
+//   FaRegArrowAltCircleLeft,
+//   FaRegArrowAltCircleRight,
+// } from 'react-icons/fa';
 import CardActionButton from './cardActionButton';
 
 class ProductCard extends React.Component {
@@ -130,8 +130,8 @@ class ProductCard extends React.Component {
             requestToChangeActive={(value) =>
               this.setState({ activeItemIndex: value })
             }
-            rightChevron={<FaRegArrowAltCircleRight color="#525252" />}
-            leftChevron={<FaRegArrowAltCircleLeft color="#525252" />}
+            // rightChevron={<FaRegArrowAltCircleRight color="#525252" />}
+            // leftChevron={<FaRegArrowAltCircleLeft color="#525252" />}
           >
             {this.state.cardDetails.map((card, i) => {
               return (

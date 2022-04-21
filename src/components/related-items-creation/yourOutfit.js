@@ -2,11 +2,11 @@ import React from 'react';
 import apiMaster from '../../apiMaster';
 import CardStars from './cardStars';
 import ItemsCarousel from 'react-items-carousel';
-import {
-  FaRegArrowAltCircleLeft,
-  FaRegArrowAltCircleRight,
-} from 'react-icons/fa';
-import { AiOutlinePlus, AiOutlineClose } from 'react-icons/ai';
+// import {
+//   FaRegArrowAltCircleLeft,
+//   FaRegArrowAltCircleRight,
+// } from 'react-icons/fa';
+import { FaOutlinePlus, FaOutlineClose } from 'react-icons/fa';
 import Cookies from 'universal-cookie';
 
 class YourOutfit extends React.Component {
@@ -177,7 +177,7 @@ class YourOutfit extends React.Component {
               this.addToOutfit();
             }}
           >
-            <AiOutlinePlus size={100} id="big-plus-sign" />
+            {/* <AiOutlinePlus size={100} id="big-plus-sign" /> */}
           </div>
           <div className="outfit-carousel-wrapper">
             <ItemsCarousel
@@ -196,8 +196,8 @@ class YourOutfit extends React.Component {
               requestToChangeActive={(value) =>
                 this.setState({ activeItemIndex: value })
               }
-              rightChevron={<FaRegArrowAltCircleRight color="#525252" />}
-              leftChevron={<FaRegArrowAltCircleLeft color="#525252" />}
+              // rightChevron={<FaRegArrowAltCircleRight color="#525252" />}
+              // leftChevron={<FaRegArrowAltCircleLeft color="#525252" />}
             >
               {this.state.cardDetails.map((card, i) => {
                 return (
@@ -207,12 +207,12 @@ class YourOutfit extends React.Component {
                         className="card-img-top"
                         src={this.state.cardImages[i]}
                       />
-                      <AiOutlineClose
+                      {/* <FaOutlineClose
                         className="action-button-outfit"
                         onClick={() => {
                           this.deleteOutfitFromCookie(i);
                         }}
-                      />
+                      /> */}
                     </div>
                     <div
                       className="card-body related-card-body"
@@ -288,7 +288,7 @@ class YourOutfit extends React.Component {
             this.addToOutfit();
           }}
         >
-          <AiOutlinePlus size={100} id="big-plus-sign" />
+          {/* <FaOutlinePlus size={100} id="big-plus-sign" /> */}
         </div>
       );
     }

@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import { FaArrowLeft } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
-import { FiChevronUp } from "react-icons/fi";
-import { FiChevronDown } from "react-icons/fi";
-import { FaExpand } from "react-icons/fa";
+// import { FaArrowLeft } from "react-icons/fa";
+// import { FaArrowRight } from "react-icons/fa";
+// import { FiChevronUp } from "react-icons/fi";
+// import { FiChevronDown } from "react-icons/fi";
+// import { FaExpand } from "react-icons/fa";
 
 class PhotoContainer extends React.Component {
   constructor(props) {
@@ -279,21 +279,21 @@ class PhotoContainer extends React.Component {
           id="product-photo-expand"
           onClick={(event) => this.handleProductPhotoExpand(event)}
         >
-          <FaExpand />
+          {/* <FaExpand /> */}
         </span>
         <span
           className="photo-selector-arrows"
           id="left-arrow"
           onClick={(event) => this.handleLeftArrowClick(event)}
         >
-          <FaArrowLeft />
+          {/* <FaArrowLeft /> */}
         </span>
         <span
           className="photo-selector-arrows"
           id="right-arrow"
           onClick={(event) => this.handleRightArrowClick(event)}
         >
-          <FaArrowRight />
+          {/* <FaArrowRight /> */}
         </span>
         {this.props.selectedStyle != undefined &&
         this.props.selectedStyle.photos.length > 7 &&
@@ -303,7 +303,7 @@ class PhotoContainer extends React.Component {
             id="up-chevron"
             onClick={(event) => this.handleUpChevronClick(event)}
           >
-            <FiChevronUp />
+            {/* <FiChevronUp /> */}
           </span>
         ) : null}
         {this.props.selectedStyle != undefined &&
@@ -314,7 +314,7 @@ class PhotoContainer extends React.Component {
             id="down-chevron"
             onClick={(event) => this.handleDownChevronClick(event)}
           >
-            <FiChevronDown />
+            {/* <FiChevronDown /> */}
           </span>
         ) : null}
       </div>

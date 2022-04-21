@@ -1,6 +1,6 @@
 import React from 'react';
 import apiMaster from '../../apiMaster';
-import { AiFillStar } from 'react-icons/ai';
+// import { FaFillStar } from 'react-icons/fa';
 import ProductCompareModal from './productCompareModal';
 
 class CardActionButton extends React.Component {
@@ -92,7 +92,7 @@ class CardActionButton extends React.Component {
           href="javascript:void(0);"
           onClick={this.handleClick}
         >
-          <AiFillStar />
+          {/* <FaFillStar /> */}
         </a>
         <ProductCompareModal
           clicked={this.state.wasClicked}

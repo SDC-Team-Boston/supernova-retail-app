@@ -1,6 +1,6 @@
 import React from "react";
 import { charScales } from "./constants.js";
-import { FaCaretUp } from "react-icons/fa";
+// import { FaCaretUp } from "react-icons/fa";
 
 const Characteristics = ({ currentRating }) => {
   let chars;
@@ -24,7 +24,7 @@ const Characteristics = ({ currentRating }) => {
                           className="characteristic-filler"
                           style={{ width: val.value * 60 }}
                         >
-                          <FaCaretUp className="characteristic-icon" />
+                          {/* <FaCaretUp className="characteristic-icon" /> */}
                         </div>
                       </div>
                     </div>

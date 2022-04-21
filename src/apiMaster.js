@@ -1,38 +1,40 @@
 import axios from "axios";
-const url = "http://18.224.200.47";
+// const url = "http://18.224.200.47";
+import { headers, url } from './config';
 
 const getProductList = () => {
-  return axios.get(`${url}/products`);
+  console.log('entered');
+  return axios.get(`${url}/products`, headers)
 };
 
-const getProductInfo = (id = 1) => {
-  return axios.get(`${url}/products/${id}`);
+const getProductInfo = (id = 66659) => {
+  return axios.get(`${url}/products/${id}`, headers);
 };
 
-const getProductStyles = (id = 1) => {
-  return axios.get(`${url}/products/${id}/styles`);
+const getProductStyles = (id = 66659) => {
+  return axios.get(`${url}/products/${id}/styles`, headers);
 };
 
-const getRelatedProducts = (id = 1) => {
-  return axios.get(`${url}/products/${id}/related`);
+const getRelatedProducts = (id = 66659) => {
+  return axios.get(`${url}/products/${id}/related`, headers);
 };
 
-const getQA = (id = 1) => {
-  return axios.get(`${url}/qa/${id}`);
+const getQA = (id = 66659) => {
+  return axios.get(`${url}/qa/questions${66659}`, headers);
 };
 
-const getReviewMetaData = (id = 1) => {
-  return axios.get(`${url}/reviews/${id}/meta`);
+const getReviewMetaData = (id = 66659) => {
+  return axios.get(`${url}/reviews/meta?product_id=${id}`, headers);
 };
 
-const getReviewsOfProduct = (id = 1, sortString = "relevant", count = 20) => {
+const getReviewsOfProduct = (id = 66659, sortString = "relevant", count = 20) => {
   return axios.get(
-    `${url}/reviews/${id}/list?sort=${sortString}:asc&count=${count}}`
+    `${url}/reviews/${id}/list?sort=${sortString}:asc&count=${count}}` , headers
   );
 };
 
 const reportReview = (reviewId) => {
-  return axios.put(`${url}/reviews/report/${reviewId}`);
+  return axios.put(`${url}/reviews/report/${reviewId}`, {}, headers);
 };
 
 const postReview = (
@@ -55,11 +57,11 @@ const postReview = (
     email: email,
     photos: photos,
     characteristics: characteristics,
-  });
+  }, headers);
 };
 
 const getCart = (userToken) => {
-  return axios.get(`${url}/cart/${userToken}`);
+  return axios.get(`${url}/cart/${userToken}`, headers);
 };
 
 const addToCart = (user_token, sku_id) => {
@@ -68,19 +70,19 @@ const addToCart = (user_token, sku_id) => {
   return axios.post(`${url}/cart/`, {
     user_token: user_token,
     sku_id: sku_id,
-  });
+  }, headers);
 };
 
 const getSpecificAnswers = (questionId) => {
-  return axios.get(`${url}/qa/${questionId}/answers`);
+  return axios.get(`${url}/qa/${questionId}/answers`, headers);
 };
 
 const askQuestion = (id, text, name, email) => {
-  return axios.post(`${url}/qa/${id}`, {
+  return axios.post(`${url}/qa/questions?product_id=${66659}`, {
     body: text,
     name: name,
     email: email,
-  });
+  }, headers);
 };
 
 const answerQuestion = (questionId, text, name, email, photos = []) => {
@@ -89,26 +91,26 @@ const answerQuestion = (questionId, text, name, email, photos = []) => {
     name: name,
     email: email,
     photos: photos,
-  });
+  }, headers);
 };
 
 const markQAsHelpful = (questionId) => {
-  return axios.put(`${url}/qa/question/${questionId}/helpful`);
+  return axios.put(`${url}/qa/question/${questionId}/helpful`, {}, headers);
 };
 
 const reportQuestion = (questionId) => {
-  return axios.put(`${url}/qa/question/${questionId}/report`);
+  return axios.put(`${url}/qa/question/${questionId}/report`, {}, headers);
 };
 
 const markAnsAsHelpful = (answerID) => {
-  return axios.put(`${url}/qa/answer/${answerID}/helpful`);
+  return axios.put(`${url}/qa/answer/${answerID}/helpful`, {}, headers);
 };
 
 const reportAns = (answerID) => {
-  return axios.put(`${url}/qa/answer/${answerID}/report`);
+  return axios.put(`${url}/qa/answer/${answerID}/report`, {}, headers);
 };
 
-const apiMaster = {
+export default {
   getProductList: getProductList,
   getProductInfo: getProductInfo,
   getProductStyles: getProductStyles,
@@ -129,4 +131,3 @@ const apiMaster = {
   addToCart: addToCart,
 };
 
-export default apiMaster;

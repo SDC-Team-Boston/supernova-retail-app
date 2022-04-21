@@ -1,10 +1,10 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { AiOutlineCopyright } from 'react-icons/ai';
+// import { FaOutlineCopyright } from 'react-icons/fa';
 
 class Footer extends React.Component {
   constructor(props) {
@@ -92,7 +92,7 @@ class Footer extends React.Component {
           >
             Admin
           </span>
-          Supernova <AiOutlineCopyright /> 2020
+          {/* Supernova <FaOutlineCopyright /> 2020 */}
         </div>
       );
     }

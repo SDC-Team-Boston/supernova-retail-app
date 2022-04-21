@@ -4,7 +4,7 @@ import Helpful from "./helpful.js";
 import Report from "./report.js";
 import Modal from "react-bootstrap/Modal";
 import moment from "moment";
-import { FaCheck } from "react-icons/fa";
+// import { FaCheck } from "react-icons/fa";
 
 class ReviewTile extends React.Component {
   constructor(props) {
@@ -105,7 +105,7 @@ class ReviewTile extends React.Component {
             <p>
               {this.props.review.recommend === 0 ? (
                 <>
-                  <FaCheck size=".75em" />I recommend this product
+                  {/* <FaCheck size=".75em" />I recommend this product */}
                 </>
               ) : null}
             </p>
